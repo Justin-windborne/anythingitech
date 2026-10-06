@@ -3,62 +3,68 @@ import { CTASection } from "@/components/site/CTASection";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Code, Server, Users, Wrench, Building2, CalendarCheck, LayoutDashboard, Database } from "lucide-react";
+import { ArrowRight, Check, Globe, Search, FileText, Wrench, Link2, CalendarCheck, CircleHelp, RefreshCw, Building2 } from "lucide-react";
 
-const whatWeBuild = [
-  "Scheduling and job management systems",
-  "Service dispatch and technician tracking",
-  "Customer portals and communication tools",
-  "Inventory and equipment tracking",
-  "Maintenance and service logs",
-  "Business dashboards and reporting tools",
-  "Reservation and booking systems",
-  "Custom internal workflow tools",
+const commonProblems = [
+  { icon: RefreshCw, text: "A website that's out of date or hard to update" },
+  { icon: Search, text: "A site no one has looked under the hood of in years" },
+  { icon: FileText, text: "Scheduling and job tracking spread across spreadsheets, texts, and paper" },
+  { icon: Wrench, text: "Tools that worked when the business was smaller and no longer fit" },
+  { icon: Link2, text: "Systems that don't talk to each other, so information gets entered twice" },
+  { icon: CalendarCheck, text: "No easy way for customers to book, request, or check status online" },
+  { icon: Globe, text: "A website that's hard for customers to find" },
+  { icon: CircleHelp, text: "Not sure what's worth building, or whether to build anything at all" },
 ];
 
-const support = [
-  "System setup and deployment",
-  "Staff training",
-  "Ongoing support and troubleshooting",
-  "Software updates and improvements",
-  "Security and data protection",
-  "Long-term maintenance",
+const included = [
+  "Website design and development",
+  "Rebuilds of older or outdated websites",
+  "Custom software and web applications",
+  "Apps for your team or your customers",
+  "Customer portals, booking, and request forms",
+  "Scheduling, job management, and internal workflow tools",
+  "Integration with the tools you already use",
+  "Setup, deployment, and staff training",
+  "Plain-English documentation for your team",
+  "Ongoing updates, support, and maintenance",
 ];
 
-const whoThisIsFor = [
-  "Contractors and service companies",
-  "Property managers",
-  "Hospitality and lodging businesses",
-  "Retail stores",
-  "Maintenance and landscaping companies",
-  "Professional service firms",
-  "Local organizations and nonprofits",
+const idealFor = [
+  "Contractors, trades, and service companies",
+  "Inns, restaurants, and hospitality businesses",
+  "Property managers and professional offices",
+  "Any island business with an aging website or a workflow that's outgrown spreadsheets",
 ];
 
-const benefits = [
-  "Reduce manual work",
-  "Improve communication",
-  "Track jobs and tasks more easily",
-  "Keep records organized",
-  "Serve customers more efficiently",
-  "Scale operations without losing control",
+const whyUs = [
+  {
+    title: "One call for your site and your tech",
+    body: "Your website, software, and IT support come from one place, so there's one number to call.",
+  },
+  {
+    title: "Plain English, no pressure",
+    body: "Most projects begin with a conversation. We help you figure out what's worth building, with no technical jargon, just a practical plan.",
+  },
+  {
+    title: "We stay involved after launch",
+    body: "Websites and software need care over time. We handle updates and improvements so you're never left managing it on your own.",
+  },
 ];
 
 const integrations = [
-  "QuickBooks",
-  "Square",
-  "Scheduling software",
-  "Email and text notifications",
-  "Internal databases",
+  "Scheduling tools",
+  "Email and calendars",
+  "Text notifications",
+  "Internal records",
   "Cloud storage",
-  "Mobile devices and tablets",
+  "Phones and tablets",
 ];
 
 const MVAppDesign = () => (
   <SiteLayout>
     <SEO
-      title="MV App Design | Custom Software for Martha's Vineyard Businesses"
-      description="Custom app development and business software for Martha's Vineyard. Scheduling systems, job management, customer portals, and automation tools built for island businesses."
+      title="Website & Software Design and Development | Martha's Vineyard"
+      description="Websites and custom software for Martha's Vineyard businesses. Site design and rebuilds, customer portals, scheduling, and workflow tools."
       canonical="https://anythingitechmv.com/services/mv-app-design"
     />
 
@@ -66,13 +72,13 @@ const MVAppDesign = () => (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
       <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none" />
       <div className="container-editorial relative">
-        <p className="eyebrow mb-6">MV App Design</p>
+        <p className="eyebrow mb-6">Website & Software Design and Development</p>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <h1 className="lg:col-span-8 display-xl text-balance animate-fade-up">
-            Custom software built for how your business actually operates.
+            Websites and software built around how your business actually runs.
           </h1>
           <p className="lg:col-span-4 text-base text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-            We design and build practical applications that simplify operations for Martha's Vineyard businesses.
+            Site design, rebuilds, custom software, and apps for Martha's Vineyard businesses.
           </p>
         </div>
       </div>
@@ -83,44 +89,41 @@ const MVAppDesign = () => (
       <div className="container-editorial">
         <div className="max-w-3xl mx-auto space-y-6 text-[17px] leading-relaxed text-pretty">
           <p className="text-muted-foreground">
-            Many Martha's Vineyard businesses rely on spreadsheets, paper schedules, text messages, and
-            disconnected systems to manage daily operations. That works—until the business grows, the
-            team expands, or communication becomes difficult to track.
+            We design and build websites and practical software for Martha's Vineyard businesses, from a
+            site your customers can find and trust to the tools your team uses every day.
           </p>
           <p className="text-muted-foreground">
-            We design and build custom applications that simplify how your business runs. These systems
-            are built specifically for your workflow, your staff, and your customers—not generic templates
-            or complicated enterprise software.
+            Websites and custom software are the core of the work. An app for your team or your customers
+            is part of that, when it fits how you operate.
           </p>
           <p className="font-medium">
-            Our goal is simple: make your operations easier to manage, more organized, and more reliable.
+            Plain-English planning, and we stay involved after launch.
           </p>
         </div>
       </div>
     </section>
 
-    {/* What We Build */}
+    {/* Common problems */}
     <section className="py-24 md:py-32 bg-surface border-y border-border">
       <div className="container-editorial">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <p className="eyebrow mb-5">What We Build</p>
-            <h2 className="display-md text-balance">Practical software tools for real businesses.</h2>
+            <p className="eyebrow mb-5">Common problems</p>
+            <h2 className="display-md text-balance">The situations that usually start the conversation.</h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Every system is designed around your actual day-to-day operations.
+              A website, a workflow, or both. These are the problems we talk through first.
             </p>
           </div>
           <div className="lg:col-span-7">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
-              {whatWeBuild.map((item, i) => {
-                const icons = [CalendarCheck, Server, Users, Database, Wrench, LayoutDashboard, CalendarCheck, Code];
-                const Icon = icons[i % icons.length];
+              {commonProblems.map((item) => {
+                const Icon = item.icon;
                 return (
-                  <div key={item} className="bg-card p-6 flex items-start gap-4">
+                  <div key={item.text} className="bg-card p-6 flex items-start gap-4">
                     <div className="mt-0.5 h-8 w-8 rounded-lg bg-accent/10 grid place-items-center shrink-0">
                       <Icon className="h-4 w-4 text-accent" strokeWidth={2} />
                     </div>
-                    <p className="text-[15px] leading-relaxed">{item}</p>
+                    <p className="text-[15px] leading-relaxed">{item.text}</p>
                   </div>
                 );
               })}
@@ -130,24 +133,21 @@ const MVAppDesign = () => (
       </div>
     </section>
 
-    {/* Local Support */}
+    {/* What's included */}
     <section className="py-24 md:py-32">
       <div className="container-editorial grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
-          <p className="eyebrow mb-5">Designed Locally. Supported Locally.</p>
-          <h2 className="display-md text-balance">We stay involved after launch.</h2>
+          <p className="eyebrow mb-5">What's included</p>
+          <h2 className="display-md text-balance">From the website to the tools your team uses.</h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Unlike large software companies, we are based on Martha's Vineyard year-round. We understand
-            how seasonal demand, staffing changes, and island logistics affect your business.
-          </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            When we build an application, we stay involved.
+            The work can be a new site, a rebuild, a custom tool, or some combination. We figure that
+            out with you before anything gets built.
           </p>
         </div>
         <div className="lg:col-span-6 lg:col-start-7">
-          <p className="font-medium mb-6">We provide:</p>
+          <p className="font-medium mb-6">Included:</p>
           <ul className="space-y-4">
-            {support.map((item) => (
+            {included.map((item) => (
               <li key={item} className="flex items-start gap-4 text-[15px] leading-relaxed">
                 <div className="mt-1 h-5 w-5 rounded-full bg-accent/10 grid place-items-center shrink-0">
                   <Check className="h-3 w-3 text-accent" strokeWidth={3} />
@@ -157,25 +157,25 @@ const MVAppDesign = () => (
             ))}
           </ul>
           <p className="mt-8 text-muted-foreground text-[15px] leading-relaxed border-l-2 border-accent pl-5">
-            You are never left managing the system on your own.
+            You're never left managing it on your own.
           </p>
         </div>
       </div>
     </section>
 
-    {/* Who This Is For */}
+    {/* Ideal for + why us */}
     <section className="py-24 md:py-32 bg-surface border-y border-border">
       <div className="container-editorial">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <p className="eyebrow mb-5">Who This Is For</p>
-            <h2 className="display-md text-balance mb-8">Businesses that rely on coordination.</h2>
+            <p className="eyebrow mb-5">Ideal for</p>
+            <h2 className="display-md text-balance mb-8">Island businesses that have outgrown the old setup.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              If your business relies on scheduling, coordination, communication, or tracking work,
-              a custom system can save time and reduce errors.
+              If the website is aging, or the day-to-day work lives in spreadsheets and texts, this is
+              the kind of help we offer.
             </p>
             <ul className="space-y-4">
-              {whoThisIsFor.map((item) => (
+              {idealFor.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed">
                   <Building2 className="h-4 w-4 text-accent mt-1 shrink-0" />
                   <span>{item}</span>
@@ -184,21 +184,16 @@ const MVAppDesign = () => (
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-5">Why Build a Custom App?</p>
-            <h2 className="display-md text-balance mb-8">A system that fits your business.</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Many businesses try to piece together multiple tools that do not work well together.
-              Over time, this creates confusion, duplicate work, and missed information.
-            </p>
-            <p className="font-medium mb-4">A custom application allows your business to:</p>
-            <ul className="space-y-3">
-              {benefits.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-[15px]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                  <span>{item}</span>
-                </li>
+            <p className="eyebrow mb-5">Why us</p>
+            <h2 className="display-md text-balance mb-8">One place to call about the work.</h2>
+            <div className="space-y-8">
+              {whyUs.map((item) => (
+                <div key={item.title}>
+                  <p className="font-medium mb-2">{item.title}</p>
+                  <p className="text-muted-foreground leading-relaxed text-[15px]">{item.body}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -208,11 +203,11 @@ const MVAppDesign = () => (
     <section className="py-24 md:py-32">
       <div className="container-editorial">
         <div className="max-w-2xl mb-14">
-          <p className="eyebrow mb-5">Connected to Your Existing Technology</p>
+          <p className="eyebrow mb-5">Connected to your existing technology</p>
           <h2 className="display-md text-balance">Works with what you already use.</h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            We can integrate custom applications with the systems you already use.
-            We focus on reliability and simplicity—not unnecessary complexity.
+            A website or a piece of software can connect to the tools you already use.
+            We focus on reliability and simplicity.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -225,29 +220,24 @@ const MVAppDesign = () => (
       </div>
     </section>
 
-    {/* Local Development */}
+    {/* One place to call */}
     <section className="py-24 md:py-32 bg-surface border-y border-border">
       <div className="container-editorial">
         <div className="max-w-3xl mx-auto">
-          <p className="eyebrow mb-5 text-center">Local Development with Real Support</p>
+          <p className="eyebrow mb-5 text-center">One call for your site and your tech</p>
           <h2 className="display-md text-balance text-center mb-8">
-            Part of the Martha's Vineyard IT ecosystem.
+            One place. One number to call.
           </h2>
           <p className="text-muted-foreground leading-relaxed text-center mb-8">
-            MV App Design is part of the same technology ecosystem as Martha's Vineyard IT. That means
-            the people who build your software are the same people who can support your computers,
-            network, and devices.
-          </p>
-          <p className="text-muted-foreground leading-relaxed text-center mb-8">
-            Instead of working with a remote development company, you have a local partner who can:
+            Your website, software, and IT support come from one place, so there's one number to call.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
             {[
-              "Visit your business",
-              "Troubleshoot in person",
-              "Train your staff",
-              "Maintain your system",
-              "Update as you grow",
+              "Your website",
+              "Your software",
+              "IT support",
+              "Staff training",
+              "Updates after launch",
             ].map((item) => (
               <div key={item} className="p-4 bg-card rounded-xl">
                 <p className="text-sm">{item}</p>
@@ -270,19 +260,19 @@ const MVAppDesign = () => (
     <section className="py-24 md:py-32">
       <div className="container-editorial">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="eyebrow mb-5">Getting Started</p>
+          <p className="eyebrow mb-5">Plain English, no pressure</p>
           <h2 className="display-md text-balance mb-6">Most projects begin with a conversation.</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            We will help you determine:
+            We help you figure out what's worth building:
           </p>
           <ul className="space-y-2 text-muted-foreground mb-8">
-            <li>Whether a custom app makes sense</li>
-            <li>What the system should do</li>
-            <li>How long development will take</li>
+            <li>Whether a new website makes sense</li>
+            <li>Whether a custom tool is worth building, or not</li>
+            <li>What the site or software should do</li>
             <li>What ongoing support will look like</li>
           </ul>
           <p className="font-medium">
-            No pressure and no technical jargon—just a practical plan.
+            No technical jargon, just a practical plan.
           </p>
         </div>
       </div>
@@ -290,9 +280,9 @@ const MVAppDesign = () => (
 
     {/* CTA */}
     <CTASection
-      title="Need a system that fits your business?"
-      description="Contact us to discuss your workflow and explore whether a custom application could simplify your operations."
-      buttonText="Start a Project"
+      title="Thinking about a new website or custom tool?"
+      description="Call (508) 560-3510 or request a visit online. Service by appointment."
+      buttonText="Request a Visit"
       buttonLink="/contact"
     />
   </SiteLayout>
