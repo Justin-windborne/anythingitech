@@ -138,9 +138,10 @@ const STATIC_PAGES = [
   { path: '/contact', changefreq: 'monthly', priority: 0.7, lastmod: TODAY },
   { path: '/service-areas', changefreq: 'monthly', priority: 0.7, lastmod: TODAY },
   { path: '/tech-tips', changefreq: 'weekly', priority: 0.8, lastmod: TODAY },
-  // Tech Tools — browser-based technician utilities. Add new tools in three
-  // places together: this list, src/App.tsx routes, and the TOOLS registry in
-  // src/pages/tech-tools/TechTools.tsx.
+  // Tech Tools — browser-based technician utilities. Add new tools in
+  // src/App.tsx, the TOOLS registry in src/pages/tech-tools/TechTools.tsx,
+  // and this list. Prerender reads the sitemap; scripts/prerender.cjs also
+  // requires /tech-tools/wordpress-site-review to be present.
   { path: '/tech-tools', changefreq: 'monthly', priority: 0.8, lastmod: TODAY },
   { path: '/tech-tools/network-diagnostics', changefreq: 'monthly', priority: 0.8, lastmod: TODAY },
   { path: '/tech-tools/subnet-calculator', changefreq: 'monthly', priority: 0.6, lastmod: TODAY },
@@ -148,6 +149,7 @@ const STATIC_PAGES = [
   { path: '/tech-tools/latency-monitor', changefreq: 'monthly', priority: 0.6, lastmod: TODAY },
   { path: '/tech-tools/video-call-readiness', changefreq: 'monthly', priority: 0.6, lastmod: TODAY },
   { path: '/tech-tools/service-checker', changefreq: 'monthly', priority: 0.6, lastmod: TODAY },
+  { path: '/tech-tools/wordpress-site-review', changefreq: 'monthly', priority: 0.6, lastmod: TODAY },
   { path: '/marthas-vineyard', changefreq: 'daily', priority: 0.9, lastmod: TODAY },
   { path: '/marthas-vineyard/submit', changefreq: 'monthly', priority: 0.5, lastmod: TODAY },
   // Filter-driven landing pages. These mirror the /businesses/* routes wired

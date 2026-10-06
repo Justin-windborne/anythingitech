@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { Activity, ArrowUpRight, Network, QrCode, ShieldCheck, Video, Wrench } from "lucide-react";
+import { Activity, ArrowUpRight, FileSearch, Network, QrCode, ShieldCheck, Video, Wrench } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { NodeLogo } from "@/components/NodeLogo";
 import { SEO } from "@/components/SEO";
@@ -71,6 +71,15 @@ const TOOLS: Tool[] = [
       "Check a domain's TLS certificate (issuer, expiry, days remaining) or whether a common service port (SMTP, IMAP, RDP, SSH…) is reachable.",
     to: "/tech-tools/service-checker",
     icon: ShieldCheck,
+    status: "live",
+  },
+  {
+    name: "WordPress Site Review",
+    tagline: "Public hygiene, SEO, and speed",
+    description:
+      "A public read of a WordPress site: two scores from 10 to 1 for hygiene and for SEO and speed, plus the findings behind them.",
+    to: "/tech-tools/wordpress-site-review",
+    icon: FileSearch,
     status: "live",
   },
 ];

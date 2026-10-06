@@ -104,6 +104,13 @@ const SITE_URL = 'https://anythingitechmv.com';
 const PRERENDER_SKIP_PATHS = new Set();
 
 /**
+ * Static tool pages come from the sitemap and must be prerendered.
+ * /tech-tools/wordpress-site-review is one of them — do not add it to the
+ * skip set above. The generator in scripts/generate-sitemap.cjs is the source.
+ */
+const REQUIRED_STATIC_PATHS = ['/tech-tools/wordpress-site-review'];
+
+/**
  * Read all URLs from sitemap.xml and convert to local paths.
  * The sitemap is the single source of truth for what gets prerendered —
  * sitemap and prerender stay in lockstep automatically, minus the small
@@ -132,6 +139,13 @@ function readSitemapPaths() {
 }
 
 const ROUTES = readSitemapPaths();
+for (const required of REQUIRED_STATIC_PATHS) {
+  if (!ROUTES.includes(required)) {
+    throw new Error(
+      `Sitemap is missing ${required}. Add it in scripts/generate-sitemap.cjs before prerender.`,
+    );
+  }
+}
 console.log(`Loaded ${ROUTES.length} routes from sitemap.xml`);
 
 const PORT = 3456;
