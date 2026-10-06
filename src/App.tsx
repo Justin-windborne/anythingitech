@@ -41,6 +41,7 @@ import WifiQrGenerator from "./pages/tech-tools/WifiQrGenerator.tsx";
 import LatencyMonitor from "./pages/tech-tools/LatencyMonitor.tsx";
 import VideoCallReadiness from "./pages/tech-tools/VideoCallReadiness.tsx";
 import ServiceChecker from "./pages/tech-tools/ServiceChecker.tsx";
+import WordPressSiteReview from "./pages/tech-tools/WordPressSiteReview.tsx";
 
 // Admin pages
 import { AdminAuthProvider } from "./contexts/AdminAuthContext.tsx";
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/tech-tools/latency-monitor" element={<LatencyMonitor />} />
           <Route path="/tech-tools/video-call-readiness" element={<VideoCallReadiness />} />
           <Route path="/tech-tools/service-checker" element={<ServiceChecker />} />
+          <Route path="/tech-tools/wordpress-site-review" element={<WordPressSiteReview />} />
 
           {/* Martha's Vineyard Business Directory */}
           <Route path="/marthas-vineyard" element={<DirectoryIndex />} />
